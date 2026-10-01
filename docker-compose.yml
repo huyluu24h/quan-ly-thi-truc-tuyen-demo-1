@@ -1,0 +1,13 @@
+services:
+  web:
+    build: .
+    env_file:
+      - .env
+    ports:
+      - "10000:10000"
+    volumes:
+      - exam-data:/app/storage
+    restart: unless-stopped
+
+volumes:
+  exam-data:
